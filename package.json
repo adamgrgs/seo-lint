@@ -1,0 +1,61 @@
+{
+    "name": "seo-lint",
+    "version": "0.1.0",
+    "author": "YEAM Wee Kian <yeam.wee.kian@gmail.com>",
+    "description": "SEO checker for HTML files",
+    "bin": {
+        "seolint": "./bin/cli.js"
+    },
+    "main": "./lib/api.js",
+    "scripts": {
+        "build": "npm run build-lib && npm run build-bin",
+        "build-lib": "babel src/lib --out-dir lib",
+        "build-bin": "babel src/bin --out-dir bin",
+        "test": "mocha --require @babel/register",
+        "lint": "eslint src --color",
+        "pretty": "prettier --write 'src/**/*.js'"
+    },
+    "directories": {
+        "lib": "lib"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/weekian/seolint.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/weekian/seolint/issues"
+    },
+    "homepage": "https://github.com/weekian/seolint#readme",
+    "keywords": [
+        "SEO",
+        "HTML",
+        "lint"
+    ],
+    "devDependencies": {
+        "@babel/cli": "^7.4.3",
+        "@babel/core": "^7.4.3",
+        "@babel/node": "^7.2.2",
+        "@babel/plugin-transform-runtime": "^7.4.3",
+        "@babel/preset-env": "^7.4.3",
+        "@babel/register": "^7.4.0",
+        "chai": "^4.2.0",
+        "eslint": "^5.16.0",
+        "eslint-config-prettier": "^4.1.0",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.17.2",
+        "eslint-plugin-node": "^8.0.1",
+        "eslint-plugin-prettier": "^3.0.1",
+        "eslint-plugin-promise": "^4.1.1",
+        "eslint-plugin-standard": "^4.0.0",
+        "mocha": "^6.1.3",
+        "prettier": "^1.17.0"
+    },
+    "dependencies": {
+        "@babel/runtime": "^7.4.3"
+    },
+    "files": [
+        "bin",
+        "lib"
+    ]
+}
